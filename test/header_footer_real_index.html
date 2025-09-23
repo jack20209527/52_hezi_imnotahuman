@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>History Time Line : Explore the Past - Understand the Present</title>
+	<meta name="description" content="Discover history like never before with History Time Line! Explore timelines of significant events, create your own custom timelines with our AI-powered generator, and delve into various historical topics. Perfect for history enthusiasts, students, and researchers. Start your historical journey today!">
+	<link rel="canonical" href="https://history-timeline.org/" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	<!-- 通用部分 -->
+	<link rel="stylesheet" href="../static/tailwind.css">
+	<link rel="stylesheet" href="../static/css/home.css">
+	<script src="../static/tailwind.js"></script>
+    <script src="../static/js/my-loading-util.js"></script>
+    <script src="../static/js/my-common-util.js"></script>
+	<script src="../static/js/language-dropdown.js"></script>
+	<script src="../static/js/language-config.js"></script>
+	<!-- <script src="../static/js/root-header.js"></script> -->
+	<!-- <script src="../static/js/root-footer.js"></script> -->
+
+	<!-- 不通用-->
+	<script src="../static/js/list_data.js"></script>
+	<script src="../static/js/typewriter.js"></script>
+
+</head>
+
+<body class="bg-gradient-to-br from-[#1a1a2e] to-[#16213e] text-white font-sans min-h-screen w-full">
+
+
+	<!-- header begin -->
+	<header>
+		<nav class="fixed w-full z-50 glass">
+			<div class="mx-auto px-6 sm:px-6 lg:px-6">
+				<!-- 桌面端 -->
+				<div class="flex justify-start h-20 items-center">
+					<!-- Logo -->
+					<a href="${imgPath}" class="flex items-center space-x-3 cursor-pointer">
+						<div class="w-10 h-10 bg-gradient-to-r from-[#FF3366] to-[#9D34DA] rounded-lg flex items-center justify-center">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.5v11m-6-4h12" />
+								<circle cx="12" cy="12" r="2.5" fill="currentColor" />
+							</svg>
+						</div>
+						<span class="text-xl font-bold bg-gradient-to-r from-[#FF3366] to-[#9D34DA] bg-clip-text text-transparent">
+							通用标题
+						</span>
+					</a>
+
+					<!-- 右侧内容 -->
+					<div class="flex items-center ml-auto space-x-4">
+						<!-- 导航链接：仅桌面端显示 -->
+						<div class="hidden md:flex items-center space-x-2">
+							<a href="${imgPath}about" id="my_record" data-lan="nav.my_work" 
+								class="px-4 py-2 rounded-md text-gray-300 hover:text-white bg-gray-800/30 hover:bg-white/20 active:bg-white shadow-none hover:shadow-sm active:shadow-inner">
+								推荐
+							</a>
+							<a href="${imgPath}list/" id="pricing-link" data-lan="nav.price" 
+								class="px-4 py-2 rounded-md text-gray-300 hover:text-white bg-gray-800/30 hover:bg-white/20 active:bg-white shadow-none hover:shadow-sm active:shadow-inner">
+								FAQ
+							</a>
+						</div>
+
+						<!-- 移动端菜单按钮 -->
+						<button id="mobile-menu-button" class="md:hidden p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+							</svg>
+						</button>
+
+						<!-- 语言选择按钮：桌面端和移动端共用 -->
+						<button id="language-selector" 
+							class="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors px-4 py-2 rounded-md bg-gray-800/30 hover:bg-white/20 hover:shadow-sm active:shadow-inner">
+							<svg class="language-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<circle cx="12" cy="12" r="10"></circle>
+								<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+								<path d="M2 12h20"></path>
+							</svg>
+							<span id="current-language" data-lan="nav.language">中文</span>
+							<svg class="language-arrow language-arrow-icon w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</button>
+					</div>
+				</div>
+
+				<!-- 移动端菜单 -->
+				<div id="mobile-menu" class="hidden md:hidden">
+					<div class="px-2 pt-2 pb-3 space-y-1 bg-black/20 backdrop-blur-lg rounded-lg mt-2">
+						<a href="${imgPath}" id="mobile-my-record" data-lan="nav.my_works"
+							class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/10">
+							My TimeLines
+						</a>
+						<a href="${imgPath}list/" id="mobile-pricing" data-lan="nav.price"
+							class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/10">
+							Main TimeLine
+						</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<!-- <script>
+		initializeHeader(0, "/")
+	</script> -->
+<!-- header end -->	
+
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+            try {
+				// 获取必要的DOM元素
+				const languageBtn = document.querySelector('#language-selector');
+				const mobileMenuButton = document.getElementById('mobile-menu-button');
+				const mobileMenu = document.getElementById('mobile-menu');
+				const languageArrow = document.querySelector('.language-arrow-icon');
+
+				if (!languageBtn) {
+					console.error('Language button not found');
+					return;
+				}
+
+				// 语言数据
+				// 创建下拉菜单实例
+				const dropdown = new Dropdown({
+					trigger: languageBtn,
+					width: 130,
+					offset: { x: 0, y: 18 },
+					position: 'bottom-right',
+					itemHeight: 36,
+					theme: 'dark',
+					items: LANGUAGES.map(lang => ({
+						content: `<span>${lang.name}</span>`,
+						value: lang.code
+					})),
+					onSelect: (item, index) => {
+						document.querySelector('#current-language').textContent = LANGUAGES[index].name;
+						console.log('Selected language:', LANGUAGES[index].code);
+					},
+					onOpen: () => {
+						console.log('Dropdown opened');
+						languageArrow.style.transition = 'transform 0.2s ease-in-out';
+        				languageArrow.style.transform = 'rotate(180deg)';
+					},
+					onClose: () => {
+						console.log('Dropdown closed');
+						languageArrow.style.transition = 'transform 0.2s ease-in-out';
+						
+        				languageArrow.style.transform = 'rotate(0deg)';
+					}
+				});
+
+				// 语言按钮点击事件
+				languageBtn.addEventListener('click', (e) => {
+					e.stopPropagation();
+					if (!mobileMenu.classList.contains('hidden')) {
+						mobileMenu.classList.add('hidden');
+					}
+				});
+
+				// 移动端菜单按钮点击事件
+				mobileMenuButton.addEventListener('click', (e) => {
+					e.stopPropagation();
+					mobileMenu.classList.toggle('hidden');
+					if (dropdown.isOpen) {
+						dropdown.close();
+					}
+				});
+
+				// 移动端菜单内容点击事件
+				mobileMenu.addEventListener('click', (e) => {
+					e.stopPropagation();
+				});
+
+				// 点击页面任意位置关闭所有弹窗
+				document.addEventListener('click', () => {
+					if (!mobileMenu.classList.contains('hidden')) {
+						mobileMenu.classList.add('hidden');
+					}
+					if (dropdown.isOpen) {
+						dropdown.close();
+					}
+				});
+
+				// ESC 键关闭所有弹窗
+				document.addEventListener('keydown', (e) => {
+					if (e.key === 'Escape') {
+						mobileMenu.classList.add('hidden');
+						dropdown.close();
+					}
+				});
+
+			} catch (error) {
+				console.error('Error initializing header:', error);
+			}
+        });
+    
+	</script> 
+
+
+	<!-- Hero Section -->
+	<section class="relative pt-32 pb-10 overflow-hidden">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="relative z-10 text-center max-w-3xl mx-auto">
+				<h1 class="text-5xl md:text-7xl font-bold mb-8">
+					<!--  初始化打字机效果 --> 
+					<span id="typewriter-text"
+						class="inline-block bg-gradient-to-r from-[#FF3366] via-[#FF6B3D] to-[#9D34DA] bg-clip-text text-transparent">
+						Timeline Generator
+					</span>
+					<br />
+					<span class="text-4xl md:text-4xl text-white" data-lan="hero.sub_title">
+						Explore the past, one timeline at a time.
+					</span>
+				</h1>
+
+				<!-- 输入功能区 -->
+				<div class="flex flex-col sm:flex-col justify-center">
+					<div>
+						<input type="text" placeholder="Enter A Historical Keyword，Like USA"
+							class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:border-[#FF3366] focus:outline-none focus:ring-2 focus:ring-[#FF3366]/20 transition-all">
+					</div>
+
+					<button id="id_jump_to_create" data-lan="hero.btn_try"
+						class="width-[200px] mt-4 glow px-8 py-4 bg-gradient-to-r from-[#FF3366] to-[#9D34DA] rounded-full font-medium text-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#FF3366]/20 hover:-translate-y-1">
+						Generate
+					</button>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+
+
+	<div class="mx-auto">
+		<div class="timeline" id="timeline"></div>
+	</div>
+
+	<div class="mx-auto">
+		<!-- 第一部分：AI历史时间线生成器介绍 -->
+		<div class="max-w-7xl mx-auto space-y-16">
+		    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+		        <h2 class="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-[#FF3366] via-[#FF6B3D] to-[#9D34DA] bg-clip-text text-transparent">
+		            Discover History Through Interactive Timelines
+		        </h2>
+		        
+		        <div class="grid md:grid-cols-2 gap-8">
+					<div class="space-y-6">
+						<div class="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 h-[280px]">
+							<h3 class="text-2xl font-semibold mb-4 text-[#FF3366]">Revolutionary Historical Timeline Creation</h3>
+							<p class="text-gray-300 leading-relaxed">
+								&emsp;&emsp;History Time Line transforms how we explore and understand historical events. Our platform combines advanced AI technology with comprehensive historical databases to create detailed, accurate timelines that bring the past to life. Whether you're researching world history or creating educational materials, our timeline generator provides an intuitive way to visualize historical connections.
+							</p>
+						</div>
+						
+						<div class="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 h-[280px]">
+							<h3 class="text-2xl font-semibold mb-4 text-[#FF6B3D]">Comprehensive Historical Coverage</h3>
+							<p class="text-gray-300 leading-relaxed">
+								&emsp;&emsp;From ancient civilizations to modern events, our timeline generator covers diverse historical topics including World War II, the Cold War, Renaissance period, and technological developments. Each timeline is carefully crafted to provide accurate, engaging historical narratives that help users understand the interconnections between different historical periods.
+							</p>
+						</div>
+					</div>
+					
+					<div class="space-y-6">
+						<div class="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 h-[280px]">
+							<h3 class="text-2xl font-semibold mb-4 text-[#9D34DA]">Smart Historical Analysis</h3>
+							<p class="text-gray-300 leading-relaxed">
+								&emsp;&emsp;Our AI-powered system doesn't just list historical events – it analyzes relationships between events, identifies key turning points, and presents history in a coherent, engaging narrative. This intelligent approach helps users understand not just what happened, but why it happened and its profound historical significance.
+							</p>
+						</div>
+						
+						<div class="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 h-[280px]">
+							<h3 class="text-2xl font-semibold mb-4 text-[#FF3366]">User-Friendly Experience</h3>
+							<p class="text-gray-300 leading-relaxed">
+								&emsp;&emsp;Creating historical timelines has never been easier. Simply enter your topic of interest, and our generator will instantly create a detailed, well-organized timeline. Perfect for students, educators, researchers, and history enthusiasts who want to explore and share historical knowledge effectively and comprehensively.
+							</p>
+						</div>
+					</div>
+				</div>
+		    </div>
+		    
+		    <!-- 第二部分：历史的意义 -->
+		    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+		        <h2 class="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-[#FF3366] via-[#FF6B3D] to-[#9D34DA] bg-clip-text text-transparent">
+		            Understanding History: A Gateway to Knowledge
+		        </h2>
+		        
+		        <div class="grid md:grid-cols-3 gap-8 mb-8">
+		            <div class="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+		                <h3 class="text-2xl font-semibold mb-4 text-[#FF6B3D]">Learning from the Past</h3>
+		                <p class="text-gray-300 leading-relaxed">
+		                    &emsp;&emsp;History serves as humanity's greatest teacher, offering invaluable lessons through the experiences of past generations. By studying historical timelines, we gain insights into patterns of social change, technological advancement, and human behavior that continue to shape our world today.
+		                </p>
+		            </div>
+		            
+		            <div class="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+		                <h3 class="text-2xl font-semibold mb-4 text-[#FF3366]">Cultural Heritage</h3>
+		                <p class="text-gray-300 leading-relaxed">
+		                    &emsp;&emsp;Understanding our historical timeline helps preserve and appreciate cultural heritage. From ancient civilizations to modern societies, each era contributes to the rich tapestry of human experience, shaping our identities and values.
+		                </p>
+		            </div>
+		            
+		            <div class="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+		                <h3 class="text-2xl font-semibold mb-4 text-[#9D34DA]">Future Guidance</h3>
+		                <p class="text-gray-300 leading-relaxed">
+		                    &emsp;&emsp;Historical knowledge empowers us to make informed decisions about our future. By understanding past events and their consequences, we can better navigate contemporary challenges and work towards a more enlightened future.
+		                </p>
+		            </div>
+		        </div>
+		    </div>
+		    
+			<div class="max-w-7xl mx-auto space-y-16">
+				<!-- 添加图片展示区域 -->
+				<div class="grid md:grid-cols-2 gap-8 mb-12">
+					<!-- 第一张图片 -->
+					<div class="relative group overflow-hidden rounded-2xl">
+						<img src="./static/image/" alt="Historical Landmarks" 
+							class="w-full h-[293px] object-cover transform transition-all duration-500 group-hover:scale-110">
+						<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+						<div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+							<h3 class="text-2xl font-bold mb-2">Historical Landmarks</h3>
+							<p class="text-sm text-gray-200">Explore the iconic symbols of human civilization</p>
+						</div>
+					</div>
+					
+					<!-- 第二张图片 -->
+					<div class="relative group overflow-hidden rounded-2xl">
+						<img src="./static/image/" alt="Journey Through Time" 
+							class="w-full h-[293px] object-cover transform transition-all duration-500 group-hover:scale-110">
+						<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+						<div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+							<h3 class="text-2xl font-bold mb-2">Journey Through Time</h3>
+							<p class="text-sm text-gray-200">Discover the evolution of human history</p>
+						</div>
+					</div>
+				</div>
+
+		    <!-- 第三部分：应用场景 -->
+		    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+		        <h2 class="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-[#FF3366] via-[#FF6B3D] to-[#9D34DA] bg-clip-text text-transparent">
+		            Timeline Generator: Versatile Applications
+		        </h2>
+		        
+		        <div class="grid md:grid-cols-4 gap-6">
+		            <div class="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+		                <div class="text-[#FF3366] mb-4">
+		                    <i class="fas fa-graduation-cap text-3xl"></i>
+		                </div>
+		                <h3 class="text-xl font-semibold mb-3">Academic Excellence</h3>
+		                <p class="text-gray-300">
+		                    &emsp;&emsp;Transform historical research and learning with interactive timelines. Perfect for students and educators studying World War II, the Renaissance, or any historical period. Create engaging visual aids for lectures and assignments.
+		                </p>
+		            </div>
+		            
+		            <div class="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+		                <div class="text-[#FF6B3D] mb-4">
+		                    <i class="fas fa-briefcase text-3xl"></i>
+		                </div>
+		                <h3 class="text-xl font-semibold mb-3">Professional Research</h3>
+		                <p class="text-gray-300">
+		                    &emsp;&emsp;Empower historians, researchers, and content creators with comprehensive timeline tools. Analyze historical patterns, document findings, and create compelling historical narratives for publications and presentations.
+		                </p>
+		            </div>
+		            
+		            <div class="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+		                <div class="text-[#9D34DA] mb-4">
+		                    <i class="fas fa-users text-3xl"></i>
+		                </div>
+		                <h3 class="text-xl font-semibold mb-3">Cultural Preservation</h3>
+		                <p class="text-gray-300">
+		                    &emsp;&emsp;Document and preserve cultural heritage through detailed historical timelines. Perfect for museums, cultural institutions, and community organizations working to maintain historical records and educate future generations.
+		                </p>
+		            </div>
+		            
+		            <div class="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+		                <div class="text-[#FF3366] mb-4">
+		                    <i class="fas fa-book text-3xl"></i>
+		                </div>
+		                <h3 class="text-xl font-semibold mb-3">Personal Discovery</h3>
+		                <p class="text-gray-300">
+		                    &emsp;&emsp;Explore family histories and personal heritage through customized timelines. Create meaningful connections with the past and share your discoveries with future generations.
+		                </p>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+
+
+	
+	<!-- footer begin -->
+	<footer class="mt-4 bg-gradient-to-br from-[#1a1a2e]/80 to-[#16213e]/90 ">
+		<div class="py-8">
+            <!-- 主要内容区域 -->
+            <div class="px-14 flex flex-col md:flex-row md:justify-between gap-8">
+                <!-- Logo部分 -->
+                <div class="mb-6 md:mt-10">
+                    <a href='${imgPath}' class="flex items-center justify-center md:justify-start">
+                    <div class="w-10 h-10 bg-gradient-to-r from-[#FF3366] to-[#9D34DA] rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.5v11m-6-4h12" />
+                                <circle cx="12" cy="12" r="2.5" fill="currentColor" />
+                            </svg>
+					    </div>
+                        <span
+						class="text-xl ml-4 font-bold bg-gradient-to-r from-[#FF3366] to-[#9D34DA] bg-clip-text text-transparent">
+						History Time Line
+					</span>
+                    </a>
+                </div>
+
+                <!-- 链接网格部分 , 如果有三列，就修改这里的 md: colos-3 -->
+				<div class="flex flex-wrap justify-end">
+					<!-- Popular History 链接 -->
+					<div class="flex flex-col items-end">
+						<h2 class="mb-4 text-medium font-semibold uppercase text-gray-200">Popular History</h2>
+						<ul class="flex flex-col items-end text-gray-400 font-medium">
+							<li class="mb-2">
+								<a href="${imgPath}recommend/${0}/" class="hover:text-gray-200 transition-colors duration-300" target="_blank">
+									内容1</a>
+							</li>
+							<li class="mb-2">
+								<a href="${imgPath}recommend/${7}/" class="hover:text-gray-200 transition-colors duration-300" target="_blank">
+									内容2</a>
+							</li>
+							<li class="mb-2">
+								<a href="${imgPath}recommend/${7}/" class="hover:text-gray-200 transition-colors duration-300" target="_blank">
+									内容3</a>
+							</li>
+						</ul>
+					</div>
+					
+					<!-- FAQ 链接 -->
+					<div class="ml-6 flex flex-col items-end">
+						<h2 class="mb-4 text-medium font-semibold uppercase text-gray-200">FAQ</h2>
+						<ul class="flex flex-col items-end text-gray-400 font-medium">
+							<li class="mb-2">
+								<a href="${imgPath}about/" class="hover:text-gray-200 transition-colors duration-300" target="_blank">
+									方案1</a>
+							</li>
+							<li class="mb-2">
+								<a href="${imgPath}privacy/" class="hover:text-gray-200 transition-colors duration-300" target="_blank">
+									方案2</a>
+							</li>
+						</ul>
+					</div>
+
+					<!-- Legal 链接 -->
+					<div class="ml-6 flex flex-col items-end">
+						<h2 class="mb-4 text-medium font-semibold uppercase text-gray-200">Legal</h2>
+						<ul class="flex flex-col items-end text-gray-400 font-medium">
+							<li class="mb-2">
+								<a href="${imgPath}about/" class="hover:text-gray-200 transition-colors duration-300" target="_blank">
+									About Us</a>
+							</li>
+							<li class="mb-2">
+								<a href="${imgPath}privacy/" class="hover:text-gray-200 transition-colors duration-300" target="_blank">
+									Privacy</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+
+            </div>
+
+            <hr class="my-10 border-white/5" />
+
+            <!-- 版权信息 -->
+            <div class="mx-auto">
+                <p class="text-center font-sans text-gray-400 text-sm">&copy; 2025 AI History Time Line. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+	<!-- footer begin -->
+
+
+
+
+
+
+	<script src="../static/js/typewriter.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			// 初始化打字机效果
+			const typewriterElement = document.getElementById('typewriter-text');
+			new Typewriter(typewriterElement, [
+				'TimeLine Generator',
+				'History at a Glance',
+				'Explore History Now'
+			], {
+				typeSpeed: 100,
+				deleteSpeed: 50,
+				wait: 2000
+			});
+		});
+	</script>
+
+</body>
+
+</html>

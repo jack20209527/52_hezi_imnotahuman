@@ -1,63 +1,65 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-    const blogData = [
-        {
-            avatar: "https://pub-2aef4031d227483ea5406094fa860a7e.r2.dev/header/SpeedRun_King.jpg",
-            nickname: "TechGuruJake",
-            playerType: "casual gamer",
-            time: "2024.06.06",
-            blog: "Just tried this HTML5 mini-game on my phone during lunch—super addictive! The controls are smooth, but I wish there were more levels. Still, it’s a blast for quick breaks. Def recommend it to anyone who loves simple, fun games. 😄 #HTML5Games #MiniGameFun"
-        },
-        {
-            avatar: "https://pub-2aef4031d227483ea5406094fa860a7e.r2.dev/header/Game_MasterZack.jpg",
-            nickname: "PixelNinjaSara",
-            playerType: "hardcore gamer",
-            time: "2024.06.06",
-            blog: "As a hardcore gamer, I was skeptical about HTML5 mini-games, but this one blew me away. The graphics are surprisingly crisp, and the challenge ramps up nicely. Took me hours to beat the boss level—worth it! Only thing is, I’d love some multiplayer options. Great job, devs! 🔥 #GamingAddict #HTML5"
-        },
-        {
-            avatar: "https://pub-2aef4031d227483ea5406094fa860a7e.r2.dev/header/Pixel_WizardDan.jpg",
-            nickname: "RetroFanMike",
-            playerType: "retro enthusiast",
-            time: "2024.06.06",
-            blog: "This HTML5 mini-game reminds me of old-school arcade games—simple, fast, and fun! Played it on my laptop, and it runs smoothly without lag. The pixel art is nostalgic, but I wish the sound effects were louder. Still, it’s a solid pick for quick gaming sessions. Loving it! 😊 #RetroGames #MiniGame"
-        },
-        {
-            avatar: "https://pub-2aef4031d227483ea5406094fa860a7e.r2.dev/header/StrategyBoss_Alex.jpg",
-            nickname: "KawaiiGamerLia",
-            playerType: "casual gamer",
-            time: "2024.06.06",
-            blog: "OMG, this HTML5 mini-game is so cute and easy to pick up! Played it on my tablet while waiting for a friend, and it’s perfect for killing time. The characters are adorable, but I got stuck on level 5—maybe a hint system would help? Still, I’m hooked! 🥰 #CuteGames #HTML5Fun"
-        },
-        {
-            avatar: "https://pub-2aef4031d227483ea5406094fa860a7e.r2.dev/header/RPG_FanaticWill.jpg",
-            nickname: "StrategyKingTom",
-            playerType: "strategy gamer",
-            time: "2024.06.06",
-            blog: "I’m into strategy games, but this HTML5 mini-game surprised me with its clever puzzles. It’s not super deep, but the quick rounds are perfect for my busy schedule. Ran it on my phone with no issues, though I’d love more difficulty options. Solid 8/10 for a mini-game! 👍 #StrategyGames #HTML5"
-        },
-        {
-            avatar: "https://pub-2aef4031d227483ea5406094fa860a7e.r2.dev/header/IndieGame_FanJoe.jpg",
-            nickname: "SpeedRunQueen",
-            playerType: "speedrunner",
-            time: "2024.06.06",
-            blog: "As a speedrunner, I love how fast-paced this HTML5 mini-game is! Managed to beat my personal best in under 2 minutes, but the controls could be tighter for precision. Still, it’s a great challenge for quick sessions on my desktop. Hoping for leaderboards soon! 🚀 #SpeedRunning #MiniGame"
-        },
-        {
-            avatar: "https://pub-2aef4031d227483ea5406094fa860a7e.r2.dev/header/Arcade_LoverEmma.jpg",
-            nickname: "MMOAddictBen",
-            playerType: "MMO player",
-            time: "2024.06.06",
-            blog: "Didn’t expect an HTML5 mini-game to be this engaging, but I played it on my break and couldn’t stop! The art style is clean, and the gameplay loops are fun. Not as complex as my usual MMOs, but it’s a nice change. Could use more content, though. Great for casual play! 😄 #MMOGamer #HTML5"
-        },
-        {
-            avatar: "https://pub-2aef4031d227483ea5406094fa860a7e.r2.dev/header/KawaiiPlayer_Mia.jpg",
-            nickname: "BattleFanAlex",
-            playerType: "competitive gamer",
-            time: "2024.06.06",
-            blog: "This HTML5 mini-game’s battle system is surprisingly fun for a small title. Played it on my phone while waiting for a match, and the PVP mode is intense! Controls are decent, but I’d love more rewards for wins. Still, it’s a chill way to prep for bigger games. Solid vibes! 🏆 #CompetitiveGaming #HTML5"
-        }
-    ];
+    const lang = document.documentElement.lang;
+  
+    const translations = {
+        "en": [
+            {
+                avatar: "https://pub-2aef4031d227483ea5406094fa860a7e.r2.dev/header/SpeedRun_King.jpg",
+                nickname: "FF Beta Guides",
+                playerType: "casual gamer",
+                time: "2025.03.12",
+                href: "../blog/0",
+                blog: "Get the latest FF Beta 2025 and FF Beta Seruapk! We offer official Android/iOS testing guides, FF Beta Testing Apkphat, and FF Beta Mod Joy downloads. Join Free Fire Beta 2025 and experience new features today!"
+            },
+            {
+                avatar: "https://pub-2aef4031d227483ea5406094fa860a7e.r2.dev/header/SpeedRun_King.jpg",
+                nickname: "FF Beta Testing APKPhat",
+                playerType: "casual gamer",
+                time: "2025.03.16",
+                href: "../blog/1",
+                blog: "The Jungle's Secret: Unraveling FF Beta Testing APKPhat Mysteries and Beyond, In the heart of the Free Fire universe, whispers of FF Beta Testing APKPhat echo through the digital jungles, promising untold adventures and exclusive access."
+            },
+        ],
+        "zh": [
+            {
+                avatar: "https://pub-2aef4031d227483ea5406094fa860a7e.r2.dev/header/SpeedRun_King.jpg",
+                nickname: "FF Beta Guides",
+                playerType: "casual gamer",
+                time: "2025.03.12",
+                href: "../blog/0",
+                blog: "Get the latest FF Beta 2025 and FF Beta Seruapk! We offer official Android/iOS testing guides, FF Beta Testing Apkphat, and FF Beta Mod Joy downloads. Join Free Fire Beta 2025 and experience new features today!"
+            },
+            {
+                avatar: "https://pub-2aef4031d227483ea5406094fa860a7e.r2.dev/header/SpeedRun_King.jpg",
+                nickname: "FF Beta Testing APKPhat",
+                playerType: "casual gamer",
+                time: "2025.03.16",
+                href: "../blog/1",
+                blog: "The Jungle's Secret: Unraveling FF Beta Testing APKPhat Mysteries and Beyond, In the heart of the Free Fire universe, whispers of FF Beta Testing APKPhat echo through the digital jungles, promising untold adventures and exclusive access."
+            },
+        ], 
+        "ko": [
+            {
+                avatar: "https://pub-2aef4031d227483ea5406094fa860a7e.r2.dev/header/SpeedRun_King.jpg",
+                nickname: "FF Beta Guides",
+                playerType: "casual gamer",
+                time: "2025.03.12",
+                href: "../blog/0",
+                blog: "Get the latest FF Beta 2025 and FF Beta Seruapk! We offer official Android/iOS testing guides, FF Beta Testing Apkphat, and FF Beta Mod Joy downloads. Join Free Fire Beta 2025 and experience new features today!"
+            },
+            {
+                avatar: "https://pub-2aef4031d227483ea5406094fa860a7e.r2.dev/header/SpeedRun_King.jpg",
+                nickname: "FF Beta Testing APKPhat",
+                playerType: "casual gamer",
+                time: "2025.03.16",
+                href: "../blog/1",
+                blog: "The Jungle's Secret: Unraveling FF Beta Testing APKPhat Mysteries and Beyond, In the heart of the Free Fire universe, whispers of FF Beta Testing APKPhat echo through the digital jungles, promising untold adventures and exclusive access."
+            },
+        ]
+    }
+
+    const blogData = translations[lang]
 
     const blogContainer = document.getElementById('blog-grid'); // 使用 ID 获取元素
 
@@ -86,12 +88,18 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
           </div>
       `;
+
+      // 添加点击事件
+      blogItem.addEventListener('click', () => {
+        window.location.href = item.href; // 跳转到 href 指定的链接
+        });
+
       blogContainer.appendChild(blogItem);
     });
   });
 
 
-{/* <p class="text-muted-foreground text-xs md:text-sm">${item.playerType}</p> */}
+/* <p class="text-muted-foreground text-xs md:text-sm">${item.playerType}</p> */
 
 
 //   <section class="mx-auto mt-6">

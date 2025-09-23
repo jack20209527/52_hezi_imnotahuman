@@ -3,43 +3,91 @@
 document.addEventListener('DOMContentLoaded', () => {
   const lang = document.documentElement.lang;
   
-  // const translations = {
-
-  // "en": 
-  
-    // [
-    //       {
-    //         "title": "Access Arise Crossover: Beta & Codes Guide",
-    //         "content": "Want early access to 'arise crossover beta' features? Learn how to find 'arise codes' and 'roblox arise crossover codes'! Watch official announcements for test invites. Once eligible, get the direct download link. Remember, slots fill fast!"
-    //       },
-    //       {
-    //         "title": "Safe 'Codes for Arise Crossover' & Downloads",
-    //         "content": "Is 'arise crossover code' download safe? Our 'arise codes' and download links are from verified sources. Always check official channels like the 'arise crossover wiki' to avoid risks. We ensure secure 'code crossover arise' downloads, so you play worry-free."
-    //       },
-    //       {
-    //         "title": "Unlock Features: 'Arise Crossover Dungeon' & More",
-    //         "content": "Explore new 'arise crossover dungeon' content! The 'arise crossover beta' shows upcoming characters, maps, and gameplay. Versions like 'arise crossover mount' previews unique features. Try 'script arise crossover' for different experiences. Get exclusive rewards for your feedback!"
-    //       },
-    //       {
-    //         "title": "Fixing 'Roblox Arise' Install Errors",
-    //         "content": "Struggling to install 'roblox arise'? Check your device's permissions first. If that fails, redownload the game file. Consult community guides for 'roblox arise codes' help. If issues persist, contact our player support for assistance."
-    //       },
-    //       {
-    //         "title": "Your Feedback: Shaping 'Anime Crossover' Game",
-    //         "content": "Share your thoughts on 'anime crossover'! We value your input during tests. Use in-game tools or forums to report bugs or ideas. Your feedback directly impacts 'anime crossover codes' and future game updates. Your insights guide improvements."
-    //       },
-    //       {
-    //         "title": "Game Data: 'Solo Leveling' & Arise Crossover",
-    //         "content": "What about your progress in 'solo leveling' inspired modes? Beta data rarely transfers to the main game. However, your feedback from 'anime crossover codes' and 'solo leveling' modes helps us. Enjoy the beta, then experience the full game at launch!"
-    //       }
-    //   ]
-      
-  // }
+  const translations = {
+      "en": [
+        {
+          title: "How to Join FF Beta Testing?",
+          content: "Get Early Access: How to Join FF Beta Testing?Want to experience the latest Free Fire content first? Joining FF Beta Testing is your best choice! Usually, you need to follow test recruitment information on the official website or social media platforms. Keep an eye on keywords like 'free fire ff beta testing' and 'ff beta testing 2025' for the latest test updates. Once you meet the requirements, you'll get the 'download ff beta testing apk' download link, and you can start your Beta Testing journey! Remember, test slots are limited, first come, first served!",
+        },
+        {
+          title: "Is FF Beta Testing APK Safe?",
+          content: "Safe Downloads: Is FF Beta Testing APK Reliable? The 'ff beta testing apk' download links we provide are from official channels or have been strictly reviewed to ensure your device's security. Please look for official logos like 'download ff beta testing' and 'download ff' to avoid downloading APKs from unknown sources. We also recommend enabling your device's security features before downloading to protect your gaming experience! We also offer safe downloads of other versions like 'ff beta seruapk' and 'seru apk', so you can enjoy them with confidence.",
+        },
+        {
+          title: "What Unique Features Does FF Beta Testing APK Offer?",
+          content: "Exclusive Reveal: What Are the Highlights of FF Beta Testing APK?FF Beta Testing APK brings together Free Fire's latest research and development results, allowing you to experience exciting content like new characters, new weapons, and new maps in advance. For example, versions like 'ff beta testing apkphat' and 'beta testing apkphat' may include exclusive features that have not yet been released. Additionally, you can experience various modified versions through 'apk ff beta testing mod' and enjoy a different gaming experience! By participating in the test, you will also have the opportunity to receive exclusive rewards and become a pioneer Free Fire player!",
+        },
+        {
+          title: "How to Solve FF Beta Testing APK Installation Issues?",
+          content: "Installation Guide: Solve FF Beta Testing APK Installation Problems!When installing 'ff beta testing apk', you may encounter some problems. Please ensure that your device has enabled the permission to 'allow installation of apps from unknown sources'. If the installation fails, please check if the APK file is complete or try downloading it again. You can also refer to the installation tutorials of versions like 'ff beta testing seru apk' and 'ff beta seru apk'. If the problem persists, please contact our customer service team, and we will be happy to assist you!"
+        },
+        {
+          title: "How to Provide Feedback During FF Beta Testing?",
+          content: "Your Suggestions: Help Improve FF Beta Testing!During your participation in 'free fire ff beta testing', we encourage you to actively provide feedback on any problems or suggestions you encounter. You can submit your comments through the in-game feedback channels or official forums. Your feedback will directly affect the subsequent development of Free Fire and make the game more perfect. We also pay special attention to feedback on modified versions such as 'ffbetatesting modfyp', and your participation will provide us with valuable reference!"
+        },
+        {
+          title: "Will Game Data Be Retained After FF Beta Testing Ends?",
+          content: "Data Questions: What Happens to Data After FF Beta Testing?Usually, FF Beta Testing data will not be retained in the official version. But your valuable feedback and gaming experience will provide us with important references. Please feel free to experience test versions like 'ff beta' and 'ff mod' and enjoy the fun of the game! At the same time, we also recommend that you re-experience the game after the official version is launched to experience more complete game content!"
+        }
+      ],
+      "zh": [
+        {
+          title: "How to Join FF Beta Testing?",
+          content: "Get Early Access: How to Join FF Beta Testing?Want to experience the latest Free Fire content first? Joining FF Beta Testing is your best choice! Usually, you need to follow test recruitment information on the official website or social media platforms. Keep an eye on keywords like 'free fire ff beta testing' and 'ff beta testing 2025' for the latest test updates. Once you meet the requirements, you'll get the 'download ff beta testing apk' download link, and you can start your Beta Testing journey! Remember, test slots are limited, first come, first served!",
+        },
+        {
+          title: "Is FF Beta Testing APK Safe?",
+          content: "Safe Downloads: Is FF Beta Testing APK Reliable? The 'ff beta testing apk' download links we provide are from official channels or have been strictly reviewed to ensure your device's security. Please look for official logos like 'download ff beta testing' and 'download ff' to avoid downloading APKs from unknown sources. We also recommend enabling your device's security features before downloading to protect your gaming experience! We also offer safe downloads of other versions like 'ff beta seruapk' and 'seru apk', so you can enjoy them with confidence.",
+        },
+        {
+          title: "What Unique Features Does FF Beta Testing APK Offer?",
+          content: "Exclusive Reveal: What Are the Highlights of FF Beta Testing APK?FF Beta Testing APK brings together Free Fire's latest research and development results, allowing you to experience exciting content like new characters, new weapons, and new maps in advance. For example, versions like 'ff beta testing apkphat' and 'beta testing apkphat' may include exclusive features that have not yet been released. Additionally, you can experience various modified versions through 'apk ff beta testing mod' and enjoy a different gaming experience! By participating in the test, you will also have the opportunity to receive exclusive rewards and become a pioneer Free Fire player!",
+        },
+        {
+          title: "How to Solve FF Beta Testing APK Installation Issues?",
+          content: "Installation Guide: Solve FF Beta Testing APK Installation Problems!When installing 'ff beta testing apk', you may encounter some problems. Please ensure that your device has enabled the permission to 'allow installation of apps from unknown sources'. If the installation fails, please check if the APK file is complete or try downloading it again. You can also refer to the installation tutorials of versions like 'ff beta testing seru apk' and 'ff beta seru apk'. If the problem persists, please contact our customer service team, and we will be happy to assist you!"
+        },
+        {
+          title: "How to Provide Feedback During FF Beta Testing?",
+          content: "Your Suggestions: Help Improve FF Beta Testing!During your participation in 'free fire ff beta testing', we encourage you to actively provide feedback on any problems or suggestions you encounter. You can submit your comments through the in-game feedback channels or official forums. Your feedback will directly affect the subsequent development of Free Fire and make the game more perfect. We also pay special attention to feedback on modified versions such as 'ffbetatesting modfyp', and your participation will provide us with valuable reference!"
+        },
+        {
+          title: "Will Game Data Be Retained After FF Beta Testing Ends?",
+          content: "Data Questions: What Happens to Data After FF Beta Testing?Usually, FF Beta Testing data will not be retained in the official version. But your valuable feedback and gaming experience will provide us with important references. Please feel free to experience test versions like 'ff beta' and 'ff mod' and enjoy the fun of the game! At the same time, we also recommend that you re-experience the game after the official version is launched to experience more complete game content!"
+        }
+      ],
+      "ko": [
+        {
+          title: "How to Join FF Beta Testing?",
+          content: "Get Early Access: How to Join FF Beta Testing?Want to experience the latest Free Fire content first? Joining FF Beta Testing is your best choice! Usually, you need to follow test recruitment information on the official website or social media platforms. Keep an eye on keywords like 'free fire ff beta testing' and 'ff beta testing 2025' for the latest test updates. Once you meet the requirements, you'll get the 'download ff beta testing apk' download link, and you can start your Beta Testing journey! Remember, test slots are limited, first come, first served!",
+        },
+        {
+          title: "Is FF Beta Testing APK Safe?",
+          content: "Safe Downloads: Is FF Beta Testing APK Reliable? The 'ff beta testing apk' download links we provide are from official channels or have been strictly reviewed to ensure your device's security. Please look for official logos like 'download ff beta testing' and 'download ff' to avoid downloading APKs from unknown sources. We also recommend enabling your device's security features before downloading to protect your gaming experience! We also offer safe downloads of other versions like 'ff beta seruapk' and 'seru apk', so you can enjoy them with confidence.",
+        },
+        {
+          title: "What Unique Features Does FF Beta Testing APK Offer?",
+          content: "Exclusive Reveal: What Are the Highlights of FF Beta Testing APK?FF Beta Testing APK brings together Free Fire's latest research and development results, allowing you to experience exciting content like new characters, new weapons, and new maps in advance. For example, versions like 'ff beta testing apkphat' and 'beta testing apkphat' may include exclusive features that have not yet been released. Additionally, you can experience various modified versions through 'apk ff beta testing mod' and enjoy a different gaming experience! By participating in the test, you will also have the opportunity to receive exclusive rewards and become a pioneer Free Fire player!",
+        },
+        {
+          title: "How to Solve FF Beta Testing APK Installation Issues?",
+          content: "Installation Guide: Solve FF Beta Testing APK Installation Problems!When installing 'ff beta testing apk', you may encounter some problems. Please ensure that your device has enabled the permission to 'allow installation of apps from unknown sources'. If the installation fails, please check if the APK file is complete or try downloading it again. You can also refer to the installation tutorials of versions like 'ff beta testing seru apk' and 'ff beta seru apk'. If the problem persists, please contact our customer service team, and we will be happy to assist you!"
+        },
+        {
+          title: "How to Provide Feedback During FF Beta Testing?",
+          content: "Your Suggestions: Help Improve FF Beta Testing!During your participation in 'free fire ff beta testing', we encourage you to actively provide feedback on any problems or suggestions you encounter. You can submit your comments through the in-game feedback channels or official forums. Your feedback will directly affect the subsequent development of Free Fire and make the game more perfect. We also pay special attention to feedback on modified versions such as 'ffbetatesting modfyp', and your participation will provide us with valuable reference!"
+        },
+        {
+          title: "Will Game Data Be Retained After FF Beta Testing Ends?",
+          content: "Data Questions: What Happens to Data After FF Beta Testing?Usually, FF Beta Testing data will not be retained in the official version. But your valuable feedback and gaming experience will provide us with important references. Please feel free to experience test versions like 'ff beta' and 'ff mod' and enjoy the fun of the game! At the same time, we also recommend that you re-experience the game after the official version is launched to experience more complete game content!"
+        }
+      ]
+  }
     
-      // accordionData = translations[lang]
+      accordionData = translations[lang]
       const accordionContainer = document.getElementById('accordion-container');
     
-      faq_list.forEach(item => {
+      accordionData.forEach(item => {
         const accordionItem = document.createElement('div');
         accordionItem.innerHTML = `
             <div class="arrow_down_button_parent_home">
@@ -74,3 +122,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
 }); 
+
+/**
+ 测试代码如下:
+    <div class="px-10">
+        <button class="arrow_down_button_home">Section 1 <span class="arrow_down_arrow_home"></span></button>
+        <div class="arrow_down_panel_home">
+          <p class="text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        
+        <button class="arrow_down_button_home">Section 2<span class="arrow_down_arrow_home"></span></button>
+        <div class="arrow_down_panel_home">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        
+        <button class="arrow_down_button_home">Section 3<span class="arrow_down_arrow_home"></span></button>
+        <div class="arrow_down_panel_home">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </div>
+ */

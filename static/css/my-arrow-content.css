@@ -5,7 +5,7 @@
     <div class="max-w-3xl mx-auto space-y-6">
         <details class="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
             <summary class="text-xl font-semibold text-[#6344f5] cursor-pointer">如何下载Good Game游戏？</summary>
-            <p class="text-gray-300 mt-2 leading-relaxed">您可以在Google Play或App Store中搜索"Good Game"进行下载。</p>
+            <p class="text-gray-300 mt-2 leading-relaxed">您可以在Google Play或App Store中搜索“Good Game”进行下载。</p>
         </details>
         <details class="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
             <summary class="text-xl font-semibold text-[#FF6B3D] cursor-pointer">订阅费用是多少？</summary>
@@ -18,66 +18,68 @@
     </div>
 </section> */
 .arrow_down_button_parent_home {
-  background-color: #282a36; /* 更浅，和外层对比更明显 */
-  border-radius: 16px;
+  background-color: #18191e;
+  border-radius: 8px; /* 所有角8px圆角 */
+  
   width: 100%;
   border: none;
-  transition: background 0.3s, box-shadow 0.3s;
-  margin-top: 10px;
-  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+  transition: 0.4s;
+  margin-top: 10px; /* 距离顶部 */
 }
 
 .arrow_down_button_home {
-    color: #fff;
+    /* background-color:  #18191e; rgb(255 255 255 / 0.05); */
+    color: #D1D5DB; /* 这个标题的是文字颜色  9ea2ae*/
     cursor: pointer;
     width: 100%;
-    padding: 20px 16px;
+    padding: 16px;
     text-align: left;
     outline: none;
     font-size: 18px;
     font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 16px;
-    transition: background 0.3s, color 0.3s;
-    background-color: transparent;
-}
 
-.arrow_down_button_home_active, .arrow_down_button_home:hover {
-    background-color: #393b4a; /* 悬停更亮 */
-    color: #ff3366;
-    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.15);
-}
-
-.arrow_down_panel_home {
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: space-between; /* 将内容和箭头分别放置在两侧 */
+    align-items: center; /* 纵向在中间 */
+  }
+  
+  .arrow_down_button_home_active, .arrow_down_button_home:hover {
+    background-color: #25252a; /* rgb(255 255 255 / 0.10); */
+    border-radius: 8px; /* 所有角8px圆角 */
+  }
+  
+  /* 标题部分 button标签 */
+  .arrow_down_panel_home {
     padding: 0 0px;
+    /* background-color: rgb(255 255 255 / 0.05); */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-}
+  }
 
-.arrow_down_panel_text_home {
-    color: #aeb6c5;
+  /* 描述  p标签 */
+  .arrow_down_panel_text_home {
+    /* background-color: #18191e; */
+    color: #aeb6c5; /*   4e5055  */
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-}
+  }
 
-.arrow_down_arrow_home {
-    width: 8px;
-    height: 8px;
-    border: solid #D1D5DB;
+  .arrow_down_arrow_home {
+    width: 8px; /* 设置箭头宽度 */
+    height: 8px; /* 设置箭头高度 */
+    border: solid #D1D5DB; /* 设置箭头颜色 */
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 3px;
     transform: rotate(45deg);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out; /* 设置动画速度 */
 }
 
 .arrow_down_arrow_home.active {
-  transform: rotate(-135deg);
+  transform: rotate(-135deg); /* 设置展开状态的旋转角度 */
 }
 
 

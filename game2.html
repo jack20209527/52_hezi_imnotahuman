@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Three.js 无尽跑酷</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        #score { position: absolute; top: 10px; left: 10px; color: white; font-size: 20px; }
+        #gameOver { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 30px; display: none; }
+        #restartButton { position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%); padding: 10px 20px; background-color: #007bff; color: white; border: none; cursor: pointer; display: none; }
+    </style>
+</head>
+<body>
+    <div id="score">分数：0</div>
+    <div id="gameOver">游戏结束！</div>
+    <button id="restartButton">重新开始</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.147.0/three.min.js"></script>
+    <script>
+        // 场景、相机、渲染器
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // 玩家 (立方体)
+        const playerGeometry = new THREE.BoxGeometry(1, 1, 1);
+        const playerMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        const player = new THREE.Mesh(playerGeometry, playerMaterial);
+        scene.add(player);
+        player.position.y = 0.5;
+        camera.position.z = 5;
+
+        // 地面 (平面)
+        const groundGeometry = new THREE.PlaneGeometry(100, 100);
+        const groundMaterial = new THREE.MeshBasicMaterial({ color: 0x888888, side: THREE.DoubleSide });
+        const ground = new THREE.Mesh(groundGeometry, groundMaterial);
+        scene.add(ground);
+        ground.rotation.x = Math.PI / 2;
+
+        // 障碍物 (随机立方体)
+        const obstacles = [];
+        function createObstacle() {
+            const obstacleGeometry = new THREE.BoxGeometry(1, 1, 1);
+            const obstacleMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+            const obstacle = new THREE.Mesh(obstacleGeometry, obstacleMaterial);
+            obstacle.position.x = Math.random() * 80 - 40;
+            obstacle.position.z = -50;
+            obstacle.position.y = 0.5;
+            scene.add(obstacle);
+            obstacles.push(obstacle);
+        }
+
+        // 游戏逻辑
+        let speed = 0.1;
+        let score = 0;
+        let isJumping = false;
+        let jumpVelocity = 0;
+        let gravity = -0.01;
+        let isGameOver = false;
+
+        function update() {
+            if (isGameOver) return;
+
+            // 移动障碍物
+            obstacles.forEach(obstacle => {
+                obstacle.position.z += speed;
+                if (obstacle.position.z > 5) {
+                    scene.remove(obstacle);
+                    obstacles.splice(obstacles.indexOf(obstacle), 1);
+                    score++;
+                    document.getElementById("score").textContent = "分数：" + score;
+                }
+
+                // 碰撞检测 (简化)
+                if (player.position.distanceTo(obstacle.position) < 1.5) {
+                    gameOver();
+                }
+            });
+
+            // 玩家跳跃
+            if (isJumping) {
+                player.position.y += jumpVelocity;
+                jumpVelocity += gravity;
+                if (player.position.y <= 0.5) {
+                    player.position.y = 0.5;
+                    isJumping = false;
+                }
+            }
+
+            // 生成新障碍物
+            if (Math.random() < 0.01) {
+                createObstacle();
+            }
+        }
+
+        function gameOver() {
+            isGameOver = true;
+            document.getElementById("gameOver").style.display = "block";
+            document.getElementById("restartButton").style.display = "block";
+        }
+
+        function resetGame() {
+            obstacles.forEach(obstacle => scene.remove(obstacle));
+            obstacles.length = 0;
+            score = 0;
+            player.position.y = 0.5;
+            speed = 0.1;
+            isGameOver = false;
+            document.getElementById("score").textContent = "分数：0";
+            document.getElementById("gameOver").style.display = "none";
+            document.getElementById("restartButton").style.display = "none";
+        }
+
+        // 动画循环
+        function animate() {
+            requestAnimationFrame(animate);
+            update();
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // 事件监听器
+        document.addEventListener("keydown", (event) => {
+            if (event.code === "Space" && !isJumping && !isGameOver) {
+                isJumping = true;
+                jumpVelocity = 0.2;
+            }
+        });
+
+        // 重新开始按钮
+        document.getElementById("restartButton").addEventListener("click", () => {
+            resetGame();
+        });
+
+        // 窗口大小调整
+        window.addEventListener('resize', onWindowResize, false);
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+    </script>
+</body>
+</html>
