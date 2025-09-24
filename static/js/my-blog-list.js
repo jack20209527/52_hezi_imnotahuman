@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 nickname: "I'm Not a Human: All Visitors & Tells Guide",
                 playerType: "casual gamer",
                 time: "2025.09.24",
-                href: "../blog/0",
+                href: "../blog/all-visitors-tells-guide/",
                 blog: "Master I'm Not a Human! Our definitive guide covers all visitors and their subtle tells, from the mushroom guy to the tall man. Learn how to spot fakes, manage your energy, and unlock all endings. Your guide to survival starts here!"
             },
             // {
