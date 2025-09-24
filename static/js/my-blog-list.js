@@ -6,20 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
         "en": [
             {
                 avatar: "https://pub-2aef4031d227483ea5406094fa860a7e.r2.dev/header/SpeedRun_King.jpg",
-                nickname: "FF Beta Guides",
+                nickname: "I'm Not a Human: All Visitors & Tells Guide",
                 playerType: "casual gamer",
-                time: "2025.03.12",
+                time: "2025.09.24",
                 href: "../blog/0",
-                blog: "Get the latest FF Beta 2025 and FF Beta Seruapk! We offer official Android/iOS testing guides, FF Beta Testing Apkphat, and FF Beta Mod Joy downloads. Join Free Fire Beta 2025 and experience new features today!"
+                blog: "Master I'm Not a Human! Our definitive guide covers all visitors and their subtle tells, from the mushroom guy to the tall man. Learn how to spot fakes, manage your energy, and unlock all endings. Your guide to survival starts here!"
             },
-            {
-                avatar: "https://pub-2aef4031d227483ea5406094fa860a7e.r2.dev/header/SpeedRun_King.jpg",
-                nickname: "FF Beta Testing APKPhat",
-                playerType: "casual gamer",
-                time: "2025.03.16",
-                href: "../blog/1",
-                blog: "The Jungle's Secret: Unraveling FF Beta Testing APKPhat Mysteries and Beyond, In the heart of the Free Fire universe, whispers of FF Beta Testing APKPhat echo through the digital jungles, promising untold adventures and exclusive access."
-            },
+            // {
+            //     avatar: "https://pub-2aef4031d227483ea5406094fa860a7e.r2.dev/header/SpeedRun_King.jpg",
+            //     nickname: "FF Beta Testing APKPhat",
+            //     playerType: "casual gamer",
+            //     time: "2025.03.16",
+            //     href: "../blog/1",
+            //     blog: "The Jungle's Secret: Unraveling FF Beta Testing APKPhat Mysteries and Beyond, In the heart of the Free Fire universe, whispers of FF Beta Testing APKPhat echo through the digital jungles, promising untold adventures and exclusive access."
+            // },
         ],
         "zh": [
             {
