@@ -18,6 +18,11 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://imnotahuman.app/blog/all-visitors-tells-guide</loc>
+  <lastmod>2025-03-13T15:34:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://imnotahuman.app/about</loc>
   <lastmod>2025-03-14T15:30:43+00:00</lastmod>
   <priority>0.80</priority>
@@ -28,12 +33,12 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://imnotahuman.app/about/</loc>
+  <loc>https://imnotahuman.app/about</loc>
   <lastmod>2025-03-14T15:30:43+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://imnotahuman.app/privacy/</loc>
+  <loc>https://imnotahuman.app/privacy</loc>
   <lastmod>2025-03-15T01:12:25+00:00</lastmod>
   <priority>0.80</priority>
 </url>
